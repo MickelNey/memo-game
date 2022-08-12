@@ -1,24 +1,10 @@
-import { CardStates, Color, Grid, GridStates } from "../../../types/types";
+import { CardStates, Grid, GridStates } from "../../../types/types";
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
+import {createCards} from "../../../data/createCards";
 
 const initialState: Grid = {
 	step: GridStates.WAITING_FIRST_CLICK,
-	cards: [{id: 0, state: CardStates.CLOSED, color: Color.RED},
-		{id: 1, state: CardStates.CLOSED, color: Color.BLUE},
-		{id: 2, state: CardStates.CLOSED, color: Color.BLUE},
-		{id: 3, state: CardStates.CLOSED, color: Color.RED},
-		{id: 4, state: CardStates.CLOSED, color: Color.GREEN},
-		{id: 5, state: CardStates.CLOSED, color: Color.PINK},
-		{id: 6, state: CardStates.CLOSED, color: Color.TEAL},
-		{id: 7, state: CardStates.CLOSED, color: Color.GREEN},
-		{id: 8, state: CardStates.CLOSED, color: Color.PINK},
-		{id: 9, state: CardStates.CLOSED, color: Color.TEAL},
-		{id: 10, state: CardStates.CLOSED, color: Color.ORANGE},
-		{id: 11, state: CardStates.CLOSED, color: Color.VIOLET},
-		{id: 12, state: CardStates.CLOSED, color: Color.YELLOW},
-		{id: 13, state: CardStates.CLOSED, color: Color.ORANGE},
-		{id: 14, state: CardStates.CLOSED, color: Color.VIOLET},
-		{id: 15, state: CardStates.CLOSED, color: Color.YELLOW}],
+	cards: createCards(),
 	chosenCardsId: [],
 	errors: ''
 }

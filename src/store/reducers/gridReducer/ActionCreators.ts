@@ -8,6 +8,6 @@ export const handleClickOnCard = (id: number, step: GridStates, dispatch: AppDis
 	}
 	if (step === GridStates.WAITING_SECOND_CLICK) {
 		dispatch(gridSlice.actions.chooseSecondCard(id))
-		setTimeout(() => dispatch(gridSlice.actions.checkCards()), 1000)
+		setTimeout(() => dispatch(gridSlice.actions.checkCards()), 500)
 	}
 }

@@ -1,6 +1,5 @@
 
 export enum Color {
-	BLACK="BLACK",
 	RED="RED",
 	BLUE="BLUE",
 	GREEN="GREEN",
@@ -10,6 +9,7 @@ export enum Color {
 	TEAL="TEAL",
 	ORANGE="ORANGE"
 }
+
 
 export enum CardStates {
 	OPENED,
