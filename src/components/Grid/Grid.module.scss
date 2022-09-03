@@ -1,11 +1,10 @@
-
 .Grid {
-  height: 400px;
-  column-gap: 10px;
-  row-gap: 10px;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(280px, 280px));
-  grid-template-rows: repeat(4, minmax(280px, 280px));
-  justify-content: center;
-
+    height: 90vh;
+    column-gap: 90vh;
+    row-gap: 1vh;
+    column-gap: 1vh;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(280px, 280px));
+    grid-template-rows: repeat(4, minmax(280px, 280px));
+    justify-content: center;
 }
