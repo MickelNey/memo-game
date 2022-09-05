@@ -1,6 +1,6 @@
 import {CardStates, CardType, Color} from "../types/types";
 
-export const createCards = () => {
+export const createCards = (): CardType[] => {
 
 	type createContainer = {
 		color: Color;
