@@ -1,6 +1,6 @@
 import React from 'react';
 import Grid from "../Grid/Grid";
-import {handleClickOnFinish, handleClickOnStart} from "../../store/reducers/gridReducer/ActionCreators";
+import {handleClickOnFinish} from "../../store/reducers/gridReducer/ActionCreators";
 import {useAppDispatch, useAppSelector} from '../../store/hooks'
 import styles from "./Container.module.scss"
 

@@ -1,10 +1,10 @@
 import React from 'react'
-import { CardStates, CardType } from '../../types/types'
+import { CardStates, CardTypeTest } from '../../types/types'
 import { useAppDispatch, useAppSelector } from '../../store/hooks'
 import './Card.scss'
 import { handleClickOnCard } from '../../store/reducers/gridReducer/ActionCreators'
 
-const Card: React.FC<CardType> = ({ id, color, state }) => {
+const Card: React.FC<CardTypeTest> = ({ id, idImage, state }) => {
     const dispatch = useAppDispatch()
     const currentState = useAppSelector((state) => state.grid.currentState)
 
@@ -16,9 +16,10 @@ const Card: React.FC<CardType> = ({ id, color, state }) => {
 
     // console.log('render ' + state + ' ' + id)
     return (
-        <li
-            className={state === CardStates.CLOSED ? 'Card__closed' : `Card__open__${color}`}
-            onClick={handleOnClick} />
+        <li className={state === CardStates.CLOSED ? 'Card__closed' : `Card__open__${idImage}`} onClick={handleOnClick}/>
+        // <li
+        //     className={state === CardStates.CLOSED ? 'Card__closed' : `Card__open__${color}`}
+        //      />
     )
 }
 

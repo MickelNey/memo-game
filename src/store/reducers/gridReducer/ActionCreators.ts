@@ -21,3 +21,11 @@ export const handleClickOnStart = (currentState: GridStates, dispatch: AppDispat
 export const handleClickOnFinish = (currentState: GridStates, dispatch: AppDispatch) => {
     dispatch(gridSlice.actions.finishGame())
 }
+
+export const handleClickOnUpButton = (currentState: GridStates, dispatch: AppDispatch) => {
+    dispatch(gridSlice.actions.upGridSize())
+}
+
+export const handleClickOnLowerButton = (currentState: GridStates, dispatch: AppDispatch) => {
+    dispatch(gridSlice.actions.lowerGridSize())
+}

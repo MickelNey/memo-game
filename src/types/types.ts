@@ -1,22 +1,16 @@
-export enum Color {
-    RED = 'RED',
-    BLUE = 'BLUE',
-    GREEN = 'GREEN',
-    YELLOW = 'YELLOW',
-    VIOLET = 'VIOLET',
-    PINK = 'PINK',
-    TEAL = 'TEAL',
-    ORANGE = 'ORANGE',
-}
-
 export enum CardStates {
     OPENED,
     CLOSED,
 }
 
-export type CardType = {
-    id: number
-    color: Color
+export type cardContainer = {
+    idImage: number,
+    availableCells: number
+}
+
+export type CardTypeTest = {
+    id: number,
+    idImage: number,
     state: CardStates
 }
 
@@ -28,11 +22,34 @@ export enum GridStates {
     WIN_GAME,
 }
 
-export interface Grid {
-    currentState: GridStates
-    foundPairs: number
-    cards: CardType[]
-    chosenCardsId: number[]
-    step: number
-    errors: string
+export enum cardsCounts {
+    FOUR = 2,
+    SIXTEEN = 8,
+    THIRTY_SIX = 18
 }
+
+export interface Grid {
+    currentState: GridStates,
+    foundPairs: number,
+    cards: CardTypeTest[],
+    chosenCardsId: number[],
+    step: number,
+    errors: string,
+    cardCount: number
+}
+
+// export enum Color {
+//     RED = 'RED',
+//     BLUE = 'BLUE',
+//     GREEN = 'GREEN',
+//     YELLOW = 'YELLOW',
+//     VIOLET = 'VIOLET',
+//     PINK = 'PINK',
+//     TEAL = 'TEAL',
+//     ORANGE = 'ORANGE',
+// }
+// export type CardType = {
+//     id: number
+//     color: Color
+//     state: CardStates
+// }
