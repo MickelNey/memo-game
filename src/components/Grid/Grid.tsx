@@ -2,16 +2,15 @@ import React from 'react';
 import { useAppSelector} from '../../store/hooks';
 import Card from "../Card/Card";
 import './Grid.scss'
-import {GridStates} from "../../types/types";
+import {GridState} from "../../types/types";
 
-const Grid = () => {
+const Grid = ({...props}) => {
 
 	const cards = useAppSelector(state => state.grid.cards);
 	const gridState = useAppSelector(state => state.grid.currentState)
 	const gridSize = useAppSelector(state => state.grid.cardCount)
-	// const steps = useAppSelector(state => state.grid.step)
 
-	if (gridState === GridStates.WIN_GAME) {
+	if (gridState === GridState.WIN_GAME) {
 		console.log("YEAH")
 	}
 
@@ -27,7 +26,6 @@ const Grid = () => {
 		}
 
 	}
-
 
 	return (
 		<ul className={setGridStyle()}>

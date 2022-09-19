@@ -1,4 +1,53 @@
-.containerButton {
-  margin: 1vh;
-  font-size: 16px;
+@mixin container-template ($size){
+  transition: 1s;
+  transform: scale(1.1);
+  height: $size;
+  width: $size;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
+
+.countBlock {
+  background: #80caff;
+  height: 5vh;
+  width: 300px;
+  border-radius: 10px;
+  color: white;
+  margin: 10px;
+}
+
+.exitButton {
+  height: 40px;
+  width: 120px;
+  border-radius: 10px;
+  margin: 5px 5px;
+  background-color: #454545;
+  font-size: 12px;
+  color: white;
+}
+
+.MenuContainer {
+  @include container-template(60vh);
+  .countBlock {
+    display: none;
+  }
+  .exitButton {
+    display: none;
+  }
+}
+
+.GameContainer {
+  @include container-template(85vh);
+  .countBlock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .exitButton {
+    display: inline-block;
+  }
+}
+
+

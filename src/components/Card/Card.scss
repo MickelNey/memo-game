@@ -1,62 +1,24 @@
 .Card {
+  transition: 0.5s;
+  border-radius: 2vh;
+  &__blocked {
+    background: url("../../data/images/card-shirt.jpeg") center center no-repeat;
+    background-size: contain;
+  }
   &__closed {
-    background: #afbccf;
+    background: url("../../data/images/card-shirt.jpeg") center center no-repeat;
+    background-size: contain;
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+    }
   }
   &__open {
     @for $i from 0 through 17 {
       &__#{$i} {
-        background: url("../../data/images/#{$i}.jpeg");
+        background: url("../../data/images/#{$i}.jpeg") center center no-repeat;
+        background-size: contain;
     }
   }
-    //&__1 {
-    //  background: url("../../data/images/1.jpeg");
-    //}
-    //&__2 {
-    //  background: url("../../data/images/2.jpeg");
-    //}
-    //&__3 {
-    //  background: url("../../data/images/3.jpeg");
-    //}
-    //&__4 {
-    //  background: url("../../data/images/4.jpeg");
-    //}
-    //&__5 {
-    //  background: url("../../data/images/5.jpeg");
-    //}
-    //&__6 {
-    //  background: url("../../data/images/6.jpeg");
-    //}
-    //&__7 {
-    //  background: url("../../data/images/7.jpeg");
-    //}
-    //&__0 {
-    //  background: url("../../data/images/0.jpeg");
-    //}
-
-    //
-    //&__RED {
-    //  background: #ffafa3;
-    //}
-    //&__GREEN {
-    //  background: #85e0a3;
-    //}
-    //&__BLUE {
-    //  background: #80caff;
-    //}
-    //&__YELLOW {
-    //  background: #ffd966;
-    //}
-    //&__ORANGE {
-    //  background: #ffc470;
-    //}
-    //&__VIOLET {
-    //  background: #d9b8ff;
-    //}
-    //&__PINK {
-    //  background: #ffbdf2;
-    //}
-    //&__TEAL {
-    //  background: #75d7f0;
-    //}
   }
 }

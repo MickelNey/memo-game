@@ -1,55 +1,39 @@
-export enum CardStates {
+export enum CardState {
     OPENED,
     CLOSED,
 }
 
-export type cardContainer = {
+export type CardContainer = {
     idImage: number,
     availableCells: number
 }
 
-export type CardTypeTest = {
+export type CardType = {
     id: number,
     idImage: number,
-    state: CardStates
+    state: CardState
 }
 
-export enum GridStates {
-    BLOCKED,
+export enum GridState {
+    NOT_STARTED,
     WAITING_FIRST_CLICK,
     WAITING_SECOND_CLICK,
     CHECKING_TWO_CARDS,
     WIN_GAME,
 }
 
-export enum cardsCounts {
+export enum cardsCount {
     FOUR = 2,
     SIXTEEN = 8,
     THIRTY_SIX = 18
 }
 
-export interface Grid {
-    currentState: GridStates,
+export interface GridData {
+    currentState: GridState,
     foundPairs: number,
-    cards: CardTypeTest[],
+    cards: CardType[],
     chosenCardsId: number[],
     step: number,
     errors: string,
     cardCount: number
 }
-
-// export enum Color {
-//     RED = 'RED',
-//     BLUE = 'BLUE',
-//     GREEN = 'GREEN',
-//     YELLOW = 'YELLOW',
-//     VIOLET = 'VIOLET',
-//     PINK = 'PINK',
-//     TEAL = 'TEAL',
-//     ORANGE = 'ORANGE',
-// }
-// export type CardType = {
-//     id: number
-//     color: Color
-//     state: CardStates
-// }

@@ -1,31 +1,37 @@
 import {AppDispatch} from '../../store'
-import {GridStates} from '../../../types/types'
+import {GridState} from '../../../types/types'
 import {gridSlice} from './gridReducer'
 
-export const handleClickOnCard = (id: number, currentState: GridStates, dispatch: AppDispatch) => {
-    if (currentState === GridStates.WAITING_FIRST_CLICK) {
+export const handleClickOnCard = (id: number, currentState: GridState, dispatch: AppDispatch) => {
+    if (currentState === GridState.WAITING_FIRST_CLICK) {
         dispatch(gridSlice.actions.chooseFirstCard(id))
     }
-    if (currentState === GridStates.WAITING_SECOND_CLICK) {
+    if (currentState === GridState.WAITING_SECOND_CLICK) {
         dispatch(gridSlice.actions.chooseSecondCard(id))
-        setTimeout(() => dispatch(gridSlice.actions.checkCards()), 500)
+        setTimeout(() => dispatch(gridSlice.actions.checkCards()), 1000)
     }
 }
 
-export const handleClickOnStart = (currentState: GridStates, dispatch: AppDispatch) => {
-    if (currentState === GridStates.BLOCKED) {
+export const handleClickOnStart = (currentState: GridState, dispatch: AppDispatch) => {
+    if (currentState === GridState.NOT_STARTED || currentState === GridState.WIN_GAME) {
         dispatch(gridSlice.actions.startGame());
     }
 }
 
-export const handleClickOnFinish = (currentState: GridStates, dispatch: AppDispatch) => {
-    dispatch(gridSlice.actions.finishGame())
+export const handleClickOnFinish = (currentState: GridState, dispatch: AppDispatch) => {
+    if (currentState !== GridState.NOT_STARTED && currentState !== GridState.CHECKING_TWO_CARDS) {
+        dispatch(gridSlice.actions.finishGame())
+    }
 }
 
-export const handleClickOnUpButton = (currentState: GridStates, dispatch: AppDispatch) => {
-    dispatch(gridSlice.actions.upGridSize())
+export const handleClickOnUpButton = (currentState: GridState, dispatch: AppDispatch) => {
+    if (currentState === GridState.NOT_STARTED || currentState === GridState.WIN_GAME) {
+        dispatch(gridSlice.actions.upGridSize())
+    }
 }
 
-export const handleClickOnLowerButton = (currentState: GridStates, dispatch: AppDispatch) => {
-    dispatch(gridSlice.actions.lowerGridSize())
+export const handleClickOnLowerButton = (currentState: GridState, dispatch: AppDispatch) => {
+    if (currentState === GridState.NOT_STARTED || currentState === GridState.WIN_GAME) {
+        dispatch(gridSlice.actions.lowerGridSize())
+    }
 }
