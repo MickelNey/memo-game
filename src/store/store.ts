@@ -1,5 +1,5 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import gridReducer from "./reducers/gridReducer/gridReducer";
+import gridReducer from "./reducers/GridReducer/GridReducer";
 
 export const store = configureStore({
   reducer: {

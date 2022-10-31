@@ -1,6 +1,6 @@
 import {AppDispatch} from '../../store'
 import {GridState} from '../../../types/types'
-import {gridSlice} from './gridReducer'
+import {gridSlice} from './GridReducer'
 
 export const handleClickOnCard = (id: number, currentState: GridState, dispatch: AppDispatch) => {
     if (currentState === GridState.WAITING_FIRST_CLICK) {

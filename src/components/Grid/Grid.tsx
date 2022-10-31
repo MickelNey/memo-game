@@ -1,7 +1,7 @@
 import React from 'react';
 import { useAppSelector} from '../../store/hooks';
 import Card from "../Card/Card";
-import './Grid.scss'
+import styles from './Grid.module.scss';
 import {GridState} from "../../types/types";
 
 const Grid = ({...props}) => {
@@ -16,15 +16,14 @@ const Grid = ({...props}) => {
 
 	const setGridStyle = () => {
 		if (gridSize === 2) {
-			return "GridFour"
+			return styles.GridFour
 		}
 		if (gridSize === 8) {
-			return "GridSixteen"
+			return styles.GridSixteen
 		}
 		if (gridSize === 18) {
-			return "GridThirtySix"
+			return styles.GridThirtySix
 		}
-
 	}
 
 	return (

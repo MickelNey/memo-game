@@ -2,7 +2,7 @@ import React from 'react'
 import { CardState, CardType, GridState } from '../../types/types'
 import { useAppDispatch, useAppSelector } from '../../store/hooks'
 import './Card.scss'
-import { handleClickOnCard } from '../../store/reducers/gridReducer/ActionCreators'
+import { handleClickOnCard } from '../../store/reducers/GridReducer/ActionCreators'
 
 const Card: React.FC<CardType> = ({ id, idImage, state }) => {
     const dispatch = useAppDispatch()
@@ -15,14 +15,14 @@ const Card: React.FC<CardType> = ({ id, idImage, state }) => {
     }
 
     function getCardClassName() {
-        let className = ''
+        let className = 'Card '
         if (currentState === GridState.NOT_STARTED) {
-            className = 'Card Card__blocked'
+            className += 'Card__blocked'
         }
         else {
-            className = (state === CardState.CLOSED)
-                ? 'Card Card__closed'
-                : `Card Card__open__${idImage}`
+            className += (state === CardState.CLOSED)
+                ? 'Card__closed'
+                : `Card__open__${idImage}`
         }
         return className;
     }

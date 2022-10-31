@@ -1,16 +1,16 @@
 @mixin container-template ($size){
-  transition: 1s;
-  transform: scale(1.1);
-  height: $size;
-  width: $size;
+  min-height: $size;
+  min-width: $size;
   display: flex;
+  margin: 0 40px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  border-radius: 40px;
 }
 
 .countBlock {
-  background: #80caff;
+  background: #2d4454;
   height: 5vh;
   width: 300px;
   border-radius: 10px;
@@ -29,7 +29,10 @@
 }
 
 .MenuContainer {
-  @include container-template(60vh);
+  @include container-template(70vh);
+
+  transition: 0.8s;
+  border: 1px solid #000;
   .countBlock {
     display: none;
   }
@@ -39,6 +42,9 @@
 }
 
 .GameContainer {
+
+  transition: 1s;
+  transform: scale(1.1);
   @include container-template(85vh);
   .countBlock {
     display: flex;
